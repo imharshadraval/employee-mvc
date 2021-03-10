@@ -4,45 +4,57 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Emp_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Emp_DOB)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Emp_DepartmentName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Emp_Status)
-        </th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+    <thead>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Emp_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Emp_DOB)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Emp_DepartmentName)
-            </td>
-            <td>
-                @(item.Emp_Status == 1 ? "Active" : "Inactive")
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Emp_Id })
-            </td>
-            <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.Emp_Id }, new { onclick = "return confirm('Are you sure to delete this employee?');" })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Emp_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emp_DOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emp_DepartmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emp_Status)
+            </th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
-    }
-
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Emp_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Emp_DOB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Emp_DepartmentName)
+                </td>
+                <td>
+                    @(item.Emp_Status == 1 ? "Active" : "Inactive")
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Emp_Id })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Emp_Id }, new { onclick = "return confirm('Are you sure to delete this employee?');" })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+<script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/datatables.min.css" />
+<script type="text/javascript" src="~/Scripts/datatables.min.js"></script>
+<script type="text/javascript">
+    $j = jQuery.noConflict();
+    $j(document).ready(function () {
+        $j(".table").DataTable();
+    });
+</script>

@@ -4,45 +4,57 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.EmpSal_EmployeeName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EmpSal_Salary)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EmpSal_StartDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EmpSal_EndDate)
-        </th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+    <thead>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmpSal_EmployeeName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmpSal_Salary)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmpSal_StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmpSal_EndDate)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.EmpSal_Id })
-            </td>
-            <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.EmpSal_Id }, new { onclick = "return confirm('Are you sure to delete this employee salary?');" })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpSal_EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpSal_Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpSal_StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpSal_EndDate)
+            </th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
-    }
-
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmpSal_EmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmpSal_Salary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmpSal_StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmpSal_EndDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EmpSal_Id })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EmpSal_Id }, new { onclick = "return confirm('Are you sure to delete this employee salary?');" })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+<script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/datatables.min.css" />
+<script type="text/javascript" src="~/Scripts/datatables.min.js"></script>
+<script type="text/javascript">
+    $j = jQuery.noConflict();
+    $j(document).ready(function () {
+        $j(".table").DataTable();
+    });
+</script>
