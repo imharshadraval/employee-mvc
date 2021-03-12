@@ -53,6 +53,16 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
+<script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/datatables.min.css" />
+<script type="text/javascript" src="~/Scripts/datatables.min.js"></script>
+<script type="text/javascript">
+    $j = jQuery.noConflict();
+    $j(document).ready(function () {
+        $j("#EmpSal_Employee").val(@ViewData["CurrEmployee"]);
+    });
+</script>
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

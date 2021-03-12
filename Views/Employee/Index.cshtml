@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<WebApplication1.Models.Employee>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add Employee", "Create", null, new { @class = "btn btn-primary", @style = "margin-top: 10px" })
 </p>
 <table class="table">
     <thead>
@@ -20,31 +20,35 @@
             </th>
             <th>Edit</th>
             <th>Delete</th>
+            <th>Salary</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Emp_Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Emp_DOB)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Emp_DepartmentName)
-                </td>
-                <td>
-                    @(item.Emp_Status == 1 ? "Active" : "Inactive")
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Emp_Id })
-                </td>
-                <td>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Emp_Id }, new { onclick = "return confirm('Are you sure to delete this employee?');" })
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_DepartmentName)
+            </td>
+            <td>
+                @(item.Emp_Status == 1 ? "Active" : "Inactive")
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Emp_Id })
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.Emp_Id }, new { onclick = "return confirm('Are you sure to delete this employee?');" })
+            </td>
+            <td>
+                @Html.ActionLink("View", "List", "EmployeeSalary", new { id = item.Emp_Id }, null)
+            </td>
+        </tr>
         }
     </tbody>
 </table>

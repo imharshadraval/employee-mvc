@@ -41,7 +41,7 @@ namespace WebApplication1.Controllers
                 else
                     return View();
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
@@ -88,10 +88,11 @@ namespace WebApplication1.Controllers
             try
             {
                 Employee.Delete(id);
+                EmployeeSalary.DeleteByEmployee(id);
                 ViewBag.Message = "Employee Deleted Successfully";
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }

@@ -15,9 +15,17 @@ namespace WebApplication1.Controllers
             return View(EmployeeSalary.List());
         }
 
-        public ActionResult Create()
+        public ActionResult Create(decimal? id)
         {
             ViewData["Employee"] = Employee.ListEmployee(1);
+            if (id != null)
+            {
+                ViewData["CurrEmployee"] = id;
+            }
+            else
+            {
+                ViewData["CurrEmployee"] = string.Empty;
+            }
             return View();
         }
 
@@ -102,6 +110,12 @@ namespace WebApplication1.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult List(decimal id)
+        {
+            ViewData["EmpId"] = id;
+            return View(EmployeeSalary.FindByEmployee(id));
         }
     }
 }

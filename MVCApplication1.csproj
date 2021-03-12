@@ -16,8 +16,8 @@
     <AssemblyName>WebApplication1</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress>true</Use64BitIISExpress>
     <IISExpressSSLPort>44347</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -179,6 +179,7 @@
     <Content Include="Views\EmployeeSalary\Index.cshtml" />
     <Content Include="Views\EmployeeSalary\Create.cshtml" />
     <Content Include="Views\EmployeeSalary\Edit.cshtml" />
+    <Content Include="Views\EmployeeSalary\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -214,7 +215,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50572</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44347/</IISUrl>
+          <IISUrl>http://localhost/employee-mvc</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

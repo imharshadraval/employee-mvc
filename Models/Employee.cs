@@ -16,7 +16,7 @@ namespace WebApplication1.Models
         [Key]
         public decimal Emp_Id { get; set; }
 
-        [Display(Name = "Name")]
+        [Display(Name = "Employee Name")]
         [Required(ErrorMessage = "Name is required")]
         public string Emp_Name { get; set; }
 
