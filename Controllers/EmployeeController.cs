@@ -89,6 +89,7 @@ namespace WebApplication1.Controllers
             {
                 Employee.Delete(id);
                 EmployeeSalary.DeleteByEmployee(id);
+                EmployeeDocument.DeleteByEmployee(id);
                 ViewBag.Message = "Employee Deleted Successfully";
                 return RedirectToAction("Index");
             }

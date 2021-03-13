@@ -1,0 +1,61 @@
+﻿@model WebApplication1.Models.EmployeeDocument
+
+
+@using (Html.BeginForm("Edit", "EmployeeDocument", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Employee Document</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.EmpDoc_Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmpDoc_Employee, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.EmpDoc_Employee, (IEnumerable<SelectListItem>)ViewData["Employee"], "--Select--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.EmpDoc_Employee, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmpDoc_Type, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.EmpDoc_Type, (IEnumerable<SelectListItem>)ViewData["DocType"], "--Select--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.EmpDoc_Type, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmpDoc_File, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="EmpDoc_FileUpload" required class="form-control" />
+                @Html.HiddenFor(model => model.EmpDoc_File, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmpDoc_File, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmpDoc_Status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.EmpDoc_Status, (IEnumerable<SelectListItem>)ViewData["Status"], new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.EmpDoc_Status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

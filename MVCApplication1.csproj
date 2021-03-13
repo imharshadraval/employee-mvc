@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmployeeDocumentController.cs" />
     <Compile Include="Controllers\EmployeeSalaryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -128,6 +129,7 @@
     </Compile>
     <Compile Include="Models\CommonConstant.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeeDocument.cs" />
     <Compile Include="Models\EmployeeSalary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -180,9 +182,14 @@
     <Content Include="Views\EmployeeSalary\Create.cshtml" />
     <Content Include="Views\EmployeeSalary\Edit.cshtml" />
     <Content Include="Views\EmployeeSalary\List.cshtml" />
+    <Content Include="Views\EmployeeDocument\Index.cshtml" />
+    <Content Include="Views\EmployeeDocument\Create.cshtml" />
+    <Content Include="Views\EmployeeDocument\Edit.cshtml" />
+    <Content Include="Views\EmployeeDocument\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\Documents\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebApplication1.Models.EmployeeDocument>
+
+<p>
+    @Html.ActionLink("Add Employee Document", "Create", null, new { @class = "btn btn-primary", @style = "margin-top: 10px" })
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpDoc_EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpDoc_TypeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpDoc_File)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpDoc_Status)
+            </th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmpDoc_EmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmpDoc_TypeName)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.EmpDoc_File)*@
+                    <a href="@item.EmpDoc_File" target="_blank">View</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmpDoc_Status)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EmpDoc_Id })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EmpDoc_Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/datatables.min.css" />
+<script type="text/javascript" src="~/Scripts/datatables.min.js"></script>
+<script type="text/javascript">
+    $j = jQuery.noConflict();
+    $j(document).ready(function () {
+        $j(".table").DataTable();
+    });
+</script>

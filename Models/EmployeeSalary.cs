@@ -174,7 +174,7 @@ namespace WebApplication1.Models
         public static int DeleteByEmployee(decimal Id)
         {
             int count = 0;
-            string cmdText = "DeleteEmployeeSalary_sp";
+            string cmdText = "DeleteEmployeeSalaryByEmployee_sp";
             SqlConnection con = new SqlConnection(CommonConstant.CONNECTIONSTRING);
             SqlCommand cmd = new SqlCommand(cmdText, con);
             cmd.CommandType = CommandType.StoredProcedure;

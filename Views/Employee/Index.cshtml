@@ -21,6 +21,7 @@
             <th>Edit</th>
             <th>Delete</th>
             <th>Salary</th>
+            <th>Document</th>
         </tr>
     </thead>
     <tbody>
@@ -47,6 +48,9 @@
             </td>
             <td>
                 @Html.ActionLink("View", "List", "EmployeeSalary", new { id = item.Emp_Id }, null)
+            </td>
+            <td>
+                @Html.ActionLink("View", "List", "EmployeeDocument", new { id = item.Emp_Id }, null)
             </td>
         </tr>
         }
