@@ -42,7 +42,7 @@
                     @Html.ActionLink("Edit", "Edit", new { id = item.EmpSal_Id })
                 </td>
                 <td>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.EmpSal_Id })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EmpSal_Id }, new { onclick = "return confirm('Are you sure to delete this employee salary?');" })
                 </td>
             </tr>
         }

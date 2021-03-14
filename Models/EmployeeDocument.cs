@@ -30,7 +30,6 @@ namespace WebApplication1.Models
         public string EmpDoc_TypeName { get; set; }
 
         [Display(Name = "Document")]
-        [Required(ErrorMessage = "Document is required")]
         public string EmpDoc_File { get; set; }
 
         public HttpPostedFileBase EmpDoc_FileUpload { get; set; }
@@ -75,6 +74,7 @@ namespace WebApplication1.Models
                 obj.EmpDoc_Employee = Convert.ToDecimal(dr.GetValue(dr.GetOrdinal("EmpDoc_Employee")));
                 obj.EmpDoc_EmployeeName = Convert.ToString(dr.GetValue(dr.GetOrdinal("EmpDoc_EmployeeName")));
                 obj.EmpDoc_Type = Convert.ToDecimal(dr.GetValue(dr.GetOrdinal("EmpDoc_Type")));
+                obj.EmpDoc_TypeName = Convert.ToString(dr.GetValue(dr.GetOrdinal("EmpDoc_TypeName")));
                 obj.EmpDoc_File = Convert.ToString(dr.GetValue(dr.GetOrdinal("EmpDoc_File")));
                 obj.EmpDoc_Status = Convert.ToInt32(dr.GetValue(dr.GetOrdinal("EmpDoc_Status")));
                 list.Add(obj);
@@ -102,6 +102,7 @@ namespace WebApplication1.Models
                 obj.EmpDoc_Employee = Convert.ToDecimal(dr.GetValue(dr.GetOrdinal("EmpDoc_Employee")));
                 obj.EmpDoc_EmployeeName = Convert.ToString(dr.GetValue(dr.GetOrdinal("EmpDoc_EmployeeName")));
                 obj.EmpDoc_Type = Convert.ToDecimal(dr.GetValue(dr.GetOrdinal("EmpDoc_Type")));
+                obj.EmpDoc_TypeName = Convert.ToString(dr.GetValue(dr.GetOrdinal("EmpDoc_TypeName")));
                 obj.EmpDoc_File = Convert.ToString(dr.GetValue(dr.GetOrdinal("EmpDoc_File")));
                 obj.EmpDoc_Status = Convert.ToInt32(dr.GetValue(dr.GetOrdinal("EmpDoc_Status")));
                 list.Add(obj);
@@ -130,6 +131,7 @@ namespace WebApplication1.Models
                 obj.EmpDoc_Employee = Convert.ToDecimal(dr.GetValue(dr.GetOrdinal("EmpDoc_Employee")));
                 obj.EmpDoc_EmployeeName = Convert.ToString(dr.GetValue(dr.GetOrdinal("EmpDoc_EmployeeName")));
                 obj.EmpDoc_Type = Convert.ToDecimal(dr.GetValue(dr.GetOrdinal("EmpDoc_Type")));
+                obj.EmpDoc_TypeName = Convert.ToString(dr.GetValue(dr.GetOrdinal("EmpDoc_TypeName")));
                 obj.EmpDoc_File = Convert.ToString(dr.GetValue(dr.GetOrdinal("EmpDoc_File")));
                 obj.EmpDoc_Status = Convert.ToInt32(dr.GetValue(dr.GetOrdinal("EmpDoc_Status")));
             }

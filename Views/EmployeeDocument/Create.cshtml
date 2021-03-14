@@ -28,9 +28,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EmpDoc_File, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="file" name="EmpDoc_FileUpload" required class="form-control" />
-                @Html.HiddenFor(model => model.EmpDoc_File, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EmpDoc_File, "", new { @class = "text-danger" })
+                <input type="file" name="EmpDoc_FileUpload" class="form-control" />
+                @Html.HiddenFor(model => model.EmpDoc_File, new { @class = "form-control", @value = "" })
+                @Html.ValidationMessageFor(model => model.EmpDoc_FileUpload, "", new { @class = "text-danger" })
             </div>
         </div>
 

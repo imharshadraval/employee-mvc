@@ -19,18 +19,38 @@ namespace WebApplication1.Models
             try
             {
                 SelectListItem item = new SelectListItem();
-                //item.Value = "0";
-                //item.Text = "--Select--";
-                //listItems.Add(item);
-
-                item = new SelectListItem();
                 item.Value = "1";
-                item.Text = "Software Developer";
+                item.Text = "IT";
                 listItems.Add(item);
 
                 item = new SelectListItem();
                 item.Value = "2";
+                item.Text = "Marketing";
+                listItems.Add(item);
+
+                item = new SelectListItem();
+                item.Value = "3";
+                item.Text = "Accounting";
+                listItems.Add(item);
+
+                item = new SelectListItem();
+                item.Value = "4";
                 item.Text = "Support";
+                listItems.Add(item);
+
+                item = new SelectListItem();
+                item.Value = "5";
+                item.Text = "Production";
+                listItems.Add(item);
+
+                item = new SelectListItem();
+                item.Value = "6";
+                item.Text = "R&D";
+                listItems.Add(item);
+
+                item = new SelectListItem();
+                item.Value = "7";
+                item.Text = "HR";
                 listItems.Add(item);
             }
             catch (Exception)

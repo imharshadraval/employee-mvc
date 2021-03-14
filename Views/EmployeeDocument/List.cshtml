@@ -34,16 +34,16 @@
                 </td>
                 <td>
                     @*@Html.DisplayFor(modelItem => item.EmpDoc_File)*@
-                    <a href="@item.EmpDoc_File" target="_blank">View</a>
+                    <a href="@Href(item.EmpDoc_File)" target="_blank">View</a>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.EmpDoc_Status)
+                    @(item.EmpDoc_Status == 1 ? "Active" : "Inactive")
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.EmpDoc_Id })
                 </td>
                 <td>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.EmpDoc_Id })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EmpDoc_Id }, new { onclick = "return confirm('Are you sure to delete this employee document?');" })
                 </td>
             </tr>
         }
